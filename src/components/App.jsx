@@ -6,25 +6,35 @@ import MovieCard from "./MovieCard";
 import { addMovies } from "../actions";
 
 class App extends React.Component {
-
-  componentDidMount(){
+  componentDidMount() {
     //Make API Call
     //Dispatch action
 
     const { store } = this.props;
 
     store.subscribe(() => {
-      console.log('UPDATED');
+      console.log("UPDATED");
       this.forceUpdate();
-    })
+    });
 
     store.dispatch(addMovies(data));
 
-    console.log('STORE', this.props.store.getState());
+    console.log("STORE", this.props.store.getState());
+  }
+
+  isMovieFavourite = (movie) => {
+    const { favourites } = this.props.store.getState();
+    const index = favourites.indexOf(movie);
+
+    if(index !== -1){
+      return true; //If there is a matching index then movie is found
+    }
+    return false;
   }
 
   render() {
     const { list } = this.props.store.getState();
+    console.log("RENDER ", this.props.store.getState());
     return (
       <div>
         <Navbar />
@@ -36,7 +46,12 @@ class App extends React.Component {
 
           <div className="list">
             {list.map((movie, index) => (
-              <MovieCard movie={movie} key={`movie-${index}`} />
+              <MovieCard
+                movie={movie}
+                key={`movie-${index}`}
+                dispatch={this.props.store.dispatch}
+                isFavourite={this.isMovieFavourite(movie)}
+              />
             ))}
           </div>
         </div>
