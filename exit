@@ -1,0 +1,29 @@
+[33mcommit 85781be07096ecfc9ef063ec96c66c60ede81bc6[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Pritam Dhara <pritam1813@gmail.com>
+Date:   Tue Jun 27 12:42:19 2023 +0530
+
+    Installed Redux toolkit
+
+[33mcommit b148e59e545ec2bac66b0b5228f3f358bc49654f[m
+Author: Pritam Dhara <pritam1813@gmail.com>
+Date:   Tue Jun 27 11:43:53 2023 +0530
+
+    Added Reducers and Actions
+
+[33mcommit ea836adba36bcf9973e67b79cf50d79ab3f66dbc[m
+Author: Pritam Dhara <pritam1813@gmail.com>
+Date:   Tue Jun 27 11:22:05 2023 +0530
+
+    Designed basic Layout and added Data
+
+[33mcommit e2d0107ea160a97a0e33de1dc7d7875f69b6f0e2[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Pritam Dhara <pritam1813@gmail.com>
+Date:   Tue Jun 27 10:26:21 2023 +0530
+
+    Initial Project setup
+
+[33mcommit 6c27511c584c741fb061617d854df927e1f204de[m
+Author: Pritam Dhara <46365255+pritam1813@users.noreply.github.com>
+Date:   Wed Jun 14 13:46:01 2023 +0530
+
+    Initial commit

@@ -7,10 +7,9 @@ import './assets/css/index.css';
 import movies from './reducers';
 
 const store = configureStore({reducer: movies});
-console.log('Store', store);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <App store={store} />
   </React.StrictMode>,
 )
