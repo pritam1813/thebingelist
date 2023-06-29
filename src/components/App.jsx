@@ -23,8 +23,8 @@ class App extends React.Component {
   }
 
   isMovieFavourite = (movie) => {
-    const { favourites } = this.props.store.getState();
-    const index = favourites.indexOf(movie);
+    const { movies } = this.props.store.getState();
+    const index = movies.favourites.indexOf(movie);
 
     if (index !== -1) {
       return true; //If there is a matching index then movie is found
@@ -37,7 +37,11 @@ class App extends React.Component {
   };
 
   render() {
-    const { list, favourites, showFavourites } = this.props.store.getState();
+
+    // Current state { movies: {}, search: {} }
+
+    const { movies } = this.props.store.getState(); //Destructuring rootReducer to get movies state
+    const { list, favourites, showFavourites } = movies; //Destructuring movies State
 
     const displayMovies = showFavourites ? favourites : list;
     console.log("RENDER ", this.props.store.getState());

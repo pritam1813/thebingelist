@@ -5,13 +5,14 @@ import {
   SET_SHOW_FAVOURITES,
 } from "../actions";
 
+// Movies Reducer
 const intialMoviesState = {
   list: [],
   favourites: [],
-  showFavourites: false
+  showFavourites: false,
 };
 
-export default function movies(state = intialMoviesState, action) {
+export function movies(state = intialMoviesState, action) {
   // if(action.type === ADD_MOVIES){
   //     return {
   //         ...state,
@@ -43,9 +44,31 @@ export default function movies(state = intialMoviesState, action) {
     case SET_SHOW_FAVOURITES:
       return {
         ...state,
-        showFavourites: action.val
-      }
+        showFavourites: action.val,
+      };
     default:
       return state;
   }
+}
+
+// Search Reducer
+const initalSearchState = {
+  result: {},
+};
+
+export function search(state = initalSearchState, action) {
+  return state;
+}
+
+// Root Reducer
+const initialRootState = {
+  movies: intialMoviesState,
+  search: initalSearchState,
+};
+
+export default function rootReducer(state = initialRootState, action) {
+  return {
+    movies: movies(state.movies, action),
+    search: search(state.search, action),
+  };
 }

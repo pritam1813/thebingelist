@@ -4,9 +4,9 @@ import { configureStore } from '@reduxjs/toolkit';
 
 import App from './components/App.jsx';
 import './assets/css/index.css';
-import movies from './reducers';
+import rootReducer from './reducers';
 
-const store = configureStore({reducer: movies});
+const store = configureStore({reducer: rootReducer});
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
