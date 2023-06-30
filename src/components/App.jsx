@@ -13,13 +13,10 @@ class App extends React.Component {
     const { store } = this.props;
 
     store.subscribe(() => {
-      console.log("UPDATED");
       this.forceUpdate();
     });
 
     store.dispatch(addMovies(data));
-
-    console.log("STORE", this.props.store.getState());
   }
 
   isMovieFavourite = (movie) => {
@@ -37,17 +34,16 @@ class App extends React.Component {
   };
 
   render() {
-
     // Current state { movies: {}, search: {} }
 
-    const { movies } = this.props.store.getState(); //Destructuring rootReducer to get movies state
+    const { movies, search } = this.props.store.getState(); //Destructuring rootReducer to get movies state
     const { list, favourites, showFavourites } = movies; //Destructuring movies State
 
     const displayMovies = showFavourites ? favourites : list;
-    console.log("RENDER ", this.props.store.getState());
+
     return (
       <div>
-        <Navbar />
+        <Navbar dispatch={this.props.store.dispatch} search={search} />
         <div className="main">
           <div className="tabs">
             <div
